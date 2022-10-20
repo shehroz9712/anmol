@@ -53,7 +53,7 @@ class AuthController extends Controller
         }
 
 
-        $credentials = (['email' => $queries->email, 'password' => $queries->password]);
+        $credentials = (['email' => $userdata->email, 'password' => $userdata->password]);
 
 
 
@@ -70,12 +70,3 @@ class AuthController extends Controller
         return view('front.login');
     }
 }
-
-
-linkily (
-linkily (
-linkily (
-linkily (
-linkily ( Management
-linkily (
-linkily ( Management
