@@ -9,10 +9,11 @@
                         <div class="card">
                             <div class="card-header pb-0">
                                 <h5>Registration</h5><span>Using this form to register yourself if you are already
-                                    registered <a href="#">login here</a></span>
+                                    registered <a href="{!! route('front.login') !!}">login here</a></span>
                             </div>
-                            <div class="card-body">
-                                <form class="theme-form">
+                            <form class="theme-form" action="{!! route('front.register') !!}" method="POST">
+                                <div class="card-body">
+                                    @csrf
                                     <div class="mb-3 row">
                                         {{-- <label class="col-form-label col-sm-3" for="exampleInputEmail1">Email address
                                             :</label> --}}
@@ -48,11 +49,11 @@
                                                 placeholder="Phone no">
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn btn-iconsolid float-end right">Submit</button>
-                            </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-iconsolid float-end right">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
