@@ -22,6 +22,6 @@ Route::name('front.')->group(
     function () {
 
         Route::get('/', 'IndexController@index')->name('index');
-        Route::get('/registration', 'AuthController@register')->name('feature');
+        Route::get('/registration', 'AuthController@register')->name('registration');
     }
 );

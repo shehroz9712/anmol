@@ -34,8 +34,9 @@
                                 src="../assets/images/logo/dark-logo.png" alt=""></a></div>
 
                 </div>
-
-                {{-- <div class="nav-right col pull-right right-menu p-0">
+@if ()
+    
+                <div class="nav-right col pull-right right-menu p-0">
                     <ul class="nav-menus">
 
                         <li class="onhover-dropdown p-0">
@@ -44,7 +45,9 @@
                                     out</a></button>
                         </li>
                     </ul>
-                </div> --}}
+                </div>
+@endif
+
                 <div class="d-lg-none mobile-toggle pull-right w-auto"><i data-feather="more-horizontal"></i></div>
             </div>
         </div>
@@ -61,14 +64,14 @@
             <!-- Container-fluid Ends-->
         </div>
         <!-- footer start-->
-        <footer class="footer footer-dark  fixed-bottom  m-l-0">
+        <footer class="footer footer-dark fixed-bottom  m-l-0">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
                         <p class="mb-0">{!! \Carbon\Carbon::now()->format('Y') !!} &copy; Copyright by {!! config('app.name') !!}. .</p>
                     </div>
-                    <div class="col-md-6">
-                        <p class="pull-right mb-0"> All rights reserved
+                    <div class="col-md-6 text-end">
+                        <p class="pull-right mb-0"> All rights reserve
                         </p>
                     </div>
                 </div>
