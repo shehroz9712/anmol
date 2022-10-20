@@ -11,6 +11,7 @@
                                 <h5>Registration</h5><span>Using this form to register yourself if you are already
                                     registered <a href="{!! route('front.login') !!}">login here</a></span>
                             </div>
+                            @include('admin.partials.errors')
                             <form class="theme-form" action="{!! route('front.register') !!}" method="POST">
                                 <div class="card-body">
                                     @csrf
@@ -45,7 +46,7 @@
                                     <div class="mb-3 row"> --}}
                                         {{-- <label class="col-sm-3 col-form-label" for="inputPassword3">Phone no :</label> --}}
                                         <div class="col-sm-6">
-                                            <input class="form-control" id="url" type="text" name="phone"
+                                            <input class="form-control" id="url" type="number" name="phone"
                                                 placeholder="Phone no">
                                         </div>
                                     </div>

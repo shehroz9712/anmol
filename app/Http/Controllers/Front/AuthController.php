@@ -44,22 +44,24 @@ class AuthController extends Controller
             ]
         );
 
-        dispatch(new \App\Jobs\SendUserCreatedEmailJob($userdata));
+        // dispatch(new \App\Jobs\SendUserCreatedEmailJob($userdata));
         request()->session()->flash('message', 'Your feedback submitted successfully');
 
 
-        if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
-        }
+        // if (Auth::attempt($request)) {
+        //     return $this->sendLoginResponse($request);
+        // }
 
 
-        $credentials = (['email' => $userdata->email, 'password' => $userdata->password]);
-
+        $credentials = (['email' => $userdata->email, 'password' => $password]);
 
 
         if (!Auth::attempt($credentials)) {
-            return $this->respondUnauthorized('Invalid Email and Password');
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
         }
+        $request->session()->regenerate();
 
         return redirect()
             ->route('front.create_event')

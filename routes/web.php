@@ -26,7 +26,7 @@ Route::name('front.')->group(
         Route::post('register', 'AuthController@register')->name('register');
         Route::get('/login', 'AuthController@login_form')->name('login');
         Route::post('/login_submit', 'AuthController@login')->name('login_submit');
-        Route::post('/create_event', 'AuthController@create_event')->name('create_event');
+        Route::get('/create_event', 'IndexController@create_event')->name('create_event');
     }
 
 );
