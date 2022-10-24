@@ -7,17 +7,18 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Lorem ipsum dolor sit amet</h5><span>Lorem ipsum dolor sit amet</span>
+                            <h5>Form Wizard And Validation</h5><span>Validation Step Form Wizard</span>
                         </div>
                         <div class="card-body">
                             <div class="stepwizard">
                                 <div class="stepwizard-row setup-panel">
-                                    <div class="stepwizard-step"><a class="btn btn-primary"
+                                    <div class="stepwizard-step"><a class="btn btn-light"
                                             href="{!! route('front.create_event') !!}">1</a>
                                         <p>Event Detail</p>
                                     </div>
-                                    <div class="stepwizard-step"><a class="btn btn-light" disabled>2</a>
-                                        <p>Vanue Info</p>
+                                    <div class="stepwizard-step"><a class="btn btn-primary"
+                                            href="{!! route('front.venue_info', $data) !!}">2</a>
+                                        <p>Vanue Info </p>
                                     </div>
                                     <div class="stepwizard-step"><a class="btn btn-light" disabled>3</a>
                                         <p>Menu Detail</p>
@@ -34,25 +35,34 @@
                                 </div>
                             </div>
                             @include('admin.partials.errors')
-                            <form class="theme-form" action="{!! route('front.submit_events') !!}" method="POST">
+                            <form class="theme-form" action="{!! route('front.submit_venue') !!}" method="POST">
                                 @csrf
-
                                 <div class="setup-content" id="step-1">
                                     <div class="col-xs-12">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Event Name</label>
-                                                    <input class="form-control" name="event_name" type="text"
-                                                        placeholder="Johan" required="required">
+                                                    <label class="control-label">Venue Name</label>
+                                                    <input class="form-control" type="text" name="venue_name"
+                                                        placeholder="Venue Name" required="required">
+                                                    <input type="hidden" name="id" value="{{ $data }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Event Type</label>
-                                                    <select class="form-select digits" name="event_type"
+                                                    <label class="control-label">Address</label>
+                                                    <input class="form-control" type="text" name="address"
+                                                        placeholder="Address" required="required">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Venue Type</label>
+                                                    <select class="form-select digits" name="venue_type"
                                                         id="exampleFormControlSelect9">
-                                                        <option diabled selected value="">Select Event Type</option>
+                                                        <option diabled selected value="">Select Venue Type</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -60,64 +70,43 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="col-sm-6">
+
+                                                <div class="form-group">
+                                                    <label class="control-label">Venue/Contact Person Email </label>
+                                                    <input class="form-control" type="email" name="contact_email"
+                                                        placeholder="venue/Contact Person Email" required="required">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
 
                                                 <div class="form-group">
-                                                    <label class="control-label">Event Dates</label>
-                                                    <input class="form-control" name="event_date" type="date"
-                                                        required="required">
+                                                    <label class="control-label">Contact Person Name </label>
+                                                    <input class="form-control" type="text" name="contact_name"
+                                                        placeholder="Contact Person Name" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
+
                                                 <div class="form-group">
-                                                    <label class="control-label">Occation</label>
-                                                    <input class="form-control" name="occation" type="text"
-                                                        placeholder="Occation" required="required">
+                                                    <label class="control-label">Contact Person Phone </label>
+                                                    <input class="form-control" type="number" name="contact_phone"
+                                                        placeholder="Contact Person Phone" required="required">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">No. of Guest</label>
-                                                    <input class="form-control" name="guest" type="number"
-                                                        placeholder="No. of Guest" required="required">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">From</label>
-                                                    <input class="form-control" name="from" type="time"
-                                                        required="required">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">To</label>
-                                                    <input class="form-control" name="to" type="time"
-                                                        required="required">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <button class="btn btn-primary nextBtn pull-right"
-                                                        type="submit">Next</button>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                        <button class="btn btn-primary nextBtn pull-right" type="submit">Next</button>
                                     </div>
                                 </div>
 
-
                             </form>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

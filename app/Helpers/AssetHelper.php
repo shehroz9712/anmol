@@ -77,6 +77,10 @@ function frontImage($file = '')
 {
     return asset('assets/front/img/' . $file);
 }
+function uploads($file = '')
+{
+    return asset('uploads/' . $file);
+}
 
 /**
  * Used to generate URL of the JavaScript file for front end

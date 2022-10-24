@@ -106,6 +106,15 @@
 
 :root {
   --theme-color: #ff8b38;
+  --theme-color-hover: #df630b;
+
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  color: #fff;
+  background-color: var(--theme-color-hover);
+  border-color: var(--theme-color-hover);
 }
 
 html {

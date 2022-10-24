@@ -1,3 +1,8 @@
+:root {
+    --theme-color: #ff8b38;
+    --theme-color-hover: #df630b;
+}
+
 .card-footer {
     margin-left: auto;
 }
@@ -5,7 +10,6 @@
 .theme-color,
 label {
     color: var(--theme-color) !important;
-
 }
 
 

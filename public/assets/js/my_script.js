@@ -10,3 +10,7 @@ function valueChanged() {
         $(".package").show();
     }
 }
+
+$(".process").click(function () {
+    $(".desc").show();
+});
