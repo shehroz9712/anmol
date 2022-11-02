@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Equipments;
+use App\Models\Equipments;
 use App\Models\Dishes;
 use App\Models\Events;
 use App\Models\MenuPackages;
