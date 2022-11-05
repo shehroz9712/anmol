@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\Equipments;
+use App\Models\ Equipments;
 use App\Models\Dishes;
 use App\Models\Events;
 use App\Models\MenuPackages;
@@ -22,12 +22,7 @@ class EventsController extends Controller
     {
         $data = $request->validate([
             'event_name' => 'required|string',
-            'event_type' => 'required|string',
             'event_date' => 'required|date|after_or_equal:today',
-            'occation' => 'required|string',
-            'guest' => 'required|integer',
-            'from' => 'required',
-            'to' => 'required',
         ]);
         $data = $request->except(
             [
@@ -64,8 +59,6 @@ class EventsController extends Controller
 
             'venue_name' => 'required|string',
             'address' => 'required|string',
-            'venue_type' => 'required|string',
-            'contact_email'   => 'required|email',
             'contact_name'  => 'required|string',
             'contact_phone' => 'required|integer',
         ]);
@@ -120,18 +113,10 @@ class EventsController extends Controller
     {
         $data =  $request->validate([
 
-            'appitizer_type' => 'required|string',
-            'appitizer_start' => 'required|string',
-            'appitizer_end' => 'required|string',
-            'appitizer_station' => 'required|string',
+            
             'maincource_type' => 'required|string',
             'maincource_start' => 'required|string',
-            'maincource_end' => 'required|string',
-            'maincource_station' => 'required|string',
-            'desert_type' => 'required|string',
-            'desert_start' => 'required|string',
-            'desert_end' => 'required|string',
-            'desert_station' => 'required|string',
+
         ]);
 
         $event_data = Events::where('id', $request->id)->first();
