@@ -21,15 +21,15 @@
                                                 href="{!! route('front.venue_info', $data) !!}">2</a>
                                             <p>Vanue Info </p>
                                         </div>
-                                        <div class="stepwizard-step"><a class="btn btn-light"
-                                                href="{!! route('front.menu', $data) !!}">3</a>
+                                        <div class="stepwizard-step"><a class="btn btn-light" {!! route('front.menu', $data) !!}>3</a>
                                             <p>Menu Detail</p>
                                         </div>
-                                        <div class="stepwizard-step"><a class="btn btn-primary"
+                                        <div class="stepwizard-step"><a class="btn btn-light"
                                                 href="{!! route('front.service', $data) !!}">4</a>
                                             <p>Services Style</p>
                                         </div>
-                                        <div class="stepwizard-step"><a class="btn btn-light" disabled>5</a>
+                                        <div class="stepwizard-step"><a class="btn btn-primary"
+                                                href="{!! route('front.Equipments', $data) !!}">5</a>
                                             <p>Equipments </p>
                                         </div>
                                         <div class="stepwizard-step"><a class="btn btn-light" disabled>6</a>

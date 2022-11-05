@@ -8,7 +8,7 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-header pb-0">
-                                <h5>Registration</h5><span>Using this form to register yourself if you are already
+                                <h5>Booking Form</h5><span>Using this form to register yourself if you are already
                                     registered <a href="{!! route('front.login') !!}">login here</a></span>
                             </div>
                             @include('admin.partials.errors')
