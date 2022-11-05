@@ -39,23 +39,20 @@
                                 </div>
                                 @include('admin.partials.errors')
                             </div>
-                            <form class="theme-form" action="{!! route('front.submit_equipments') !!}" method="POST">
+                            <form class="theme-form" action="{!! route('front.submit_labour_staff') !!}" method="POST">
                                 @csrf
                                 <div class="setup-content" id="step-1">
                                     <div class="align-items-end row">
-
-
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <input type="hidden" name="id" value="{{ $data }}">
-                                                <label class="control-label">Equipments</label>
-                                                <select class="form-select digits" name="equipment[]" id="equipment"
+                                                <label class="control-label">Labour Staff</label>
+                                                <select class="form-select digits" name="labourstaff[]" id="equipment"
                                                     id="exampleFormControlSelect9">
-                                                    <option diabled selected value="">Select Equipments
-                                                    </option>
-                                                    @foreach ($equipments as $row)
-                                                        <option value="{{ $row->equipment }}">
-                                                            {{ $row->equipment }}2</option>
+                                                    <option diabled selected value="">Select Labour Staff</option>
+                                                    @foreach ($labourstaff as $row)
+                                                        <option value="{{ $row->name }}">
+                                                            {{ $row->name }}2</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -121,7 +118,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="id" value="{{ $data }}">
                                 <label class="control-label">Equipments</label>
-                                <input   class="form-select " type="text" readonly name="equipment[]" value="${equipment}">
+                                <input   class="form-select " type="text" readonly name="labourstaff[]" value="${equipment}">
                             </div>
                         </div>
                         <div class="col-sm-3">

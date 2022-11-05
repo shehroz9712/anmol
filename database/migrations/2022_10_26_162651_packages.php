@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePackageDishesTable extends Migration
+class Packages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreatePackageDishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('package_dishes', function (Blueprint $table) {
+        Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('package_id')->constrained();
-            $table->foreignId('dishe_id')->constrained();
+            $table->string('package_name', 64)->nullable();
+            $table->integer('person')->nullable();
+            $table->string('dishes')->nullable();
+            $table->integer('price')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreatePackageDishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('package_dishes');
+        Schema::dropIfExists('packages');
     }
 }

@@ -122,10 +122,7 @@
                                             <div class="row">
                                                 @foreach ($packages as $package)
                                                     @foreach ($package->dishes1 as $package2)
-                                                        <li>
-                                                            <h6>
-                                                            </h6>
-                                                        </li>
+                                                        
                                                         <div class="col-md-2">
                                                             <div class="form-check">
                                                                 <div class="checkbox p-0">

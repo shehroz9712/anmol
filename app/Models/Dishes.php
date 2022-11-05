@@ -11,8 +11,14 @@ class Dishes extends Model
 
 
 
-    public function menu_attribute()
+    // public function menu_attribute()
+    // {
+    //     return $this->hasMany(MenuAttribute::class, 'menu_id', 'id');
+    // }
+
+
+    public function packages()
     {
-        return $this->hasMany(MenuAttribute::class, 'menu_id', 'id');
+        return $this->belongsToMany(Packages::class);
     }
 }

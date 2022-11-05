@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Equipments;
+use App\Models\Equipments;
 use App\Models\Dishes;
 use App\Models\Events;
-use App\Models\MenuPackages;
+use App\Models\EvnetEquipmentsStaff;
+use App\Models\LabourStaff;
+use App\Models\Packages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -91,9 +93,8 @@ class EventsController extends Controller
     // menu start
     public function menu($id)
     {
-        $packages = MenuPackages::where('status', 1)->with('dishes1')->get();
-        // dd($packages);
-
+        $packages = Packages::where('status', 1)->with('dishes')->first();
+        dd($packages);
         // $package_dishes =  implode(',', $packages->dishes);
 
         $dishes = Dishes::where('status', 1)->with('menu_attribute')->get();
@@ -102,7 +103,6 @@ class EventsController extends Controller
     }
     public function submit_menu(Request $request)
     {
-        dd($request->all());
 
         return redirect()
             ->route('front.service', '1')
@@ -157,29 +157,64 @@ class EventsController extends Controller
     public function equipments($id)
     {
 
-        $packages = Equipments::where('status', 1)->with('dishes1')->get();
-
+        $equipments = Equipments::where('status', 1)->get();
         $data = $id;
-        return view('front.equipments', compact('data'));
+        return view('front.equipments', compact('data', 'equipments'));
     }
-    public function submit_equipments()
+    public function submit_equipments(Request $request)
     {
-        return redirect()
-            ->route('front.labour_staff', '1')
-            ->with('success', 'Equipments has been submit successfully.');
+        $number = count($request->qty);
+
+        if ($number >= 1) {
+            for ($i = 0; $i < $number; $i++) {
+                EvnetEquipmentsStaff::where('id', $request->id)->create([
+                    'name' => $request->equipment[$i],
+                    'qty' => $request->qty[$i],
+                    'event_id' => $request->id,
+                    'type' => 'equipment'
+
+                ]);
+            }
+
+            return redirect()
+                ->route('front.labour_staff', '1')
+                ->with('success', 'Equipments has been submit successfully.');
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Qty is Required.');
+        }
     }
     // equipments End
     // labour_staff start
     public function labour_staff($id)
     {
+        $labourstaff = LabourStaff::where('status', 1)->get();
         $data = $id;
-        return view('front.labour_staff', compact('data'));
+        return view('front.labour_staff', compact('data', 'labourstaff'));
     }
-    public function submit_labour_staff()
+    public function submit_labour_staff(Request $request)
     {
-        return redirect()
-            ->route('front.labour_staff', '1')
-            ->with('success', 'Labour And Staff has been submit successfully.');
+        $number = count($request->qty);
+
+        if ($number >= 1) {
+            for ($i = 0; $i < $number; $i++) {
+                EvnetEquipmentsStaff::where('id', $request->id)->create([
+                    'name' => $request->labourstaff[$i],
+                    'qty' => $request->qty[$i],
+                    'event_id' => $request->id,
+                    'type' => 'labour'
+                ]);
+            }
+
+            return redirect()
+                ->route('front.index')
+                ->with('success', 'Labour And Staff has been submit successfully.');
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Qty is Required.');
+        }
     }
 
     // labour_staff End

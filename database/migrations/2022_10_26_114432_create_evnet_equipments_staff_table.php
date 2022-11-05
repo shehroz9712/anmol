@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePackageDishesTable extends Migration
+class CreateEvnetEquipmentsStaffTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePackageDishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('package_dishes', function (Blueprint $table) {
+        Schema::create('evnet_equipments_staff', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('package_id')->constrained();
-            $table->foreignId('dishe_id')->constrained();
+            $table->string('name');
+            $table->integer('qty');
+            $table->integer('event_id');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePackageDishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('package_dishes');
+        Schema::dropIfExists('evnet_equipments_staff');
     }
 }

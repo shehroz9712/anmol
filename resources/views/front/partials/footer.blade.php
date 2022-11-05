@@ -35,4 +35,4 @@
 
    <!-- login js-->
    <!-- Plugin used-->
-   @stack('scripts')
+   @yield('scripts')
