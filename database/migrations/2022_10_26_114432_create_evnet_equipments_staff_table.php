@@ -15,10 +15,10 @@ class CreateEvnetEquipmentsStaffTable extends Migration
     {
         Schema::create('evnet_equipments_staff', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('qty');
-            $table->integer('event_id');
-            $table->string('type');
+            $table->string('name')->nullable();
+            $table->integer('qty')->nullable();
+            $table->integer('event_id')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

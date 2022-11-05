@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('username', 64);
             $table->string('phone', 24)->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
             $table->integer('code')->nullable();
             $table->boolean('is_active')->default(0);
@@ -34,4 +34,4 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
-}
+}}

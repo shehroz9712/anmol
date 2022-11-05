@@ -29,7 +29,7 @@
                                             <p>Services Style</p>
                                         </div>
                                         <div class="stepwizard-step"><a class="btn btn-primary"
-                                                href="{!! route('front.Equipments', $data) !!}">5</a>
+                                                href="{!! route('front.equipments', $data) !!}">5</a>
                                             <p>Equipments </p>
                                         </div>
                                         <div class="stepwizard-step"><a class="btn btn-light" disabled>6</a>
