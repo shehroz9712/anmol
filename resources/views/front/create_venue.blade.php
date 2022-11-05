@@ -44,7 +44,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Venue Name</label>
                                                     <input class="form-control" type="text" name="venue_name"
-                                                        placeholder="Venue Name" required="required">
+                                                        placeholder="Venue Name">
                                                     <input type="hidden" name="id" value="{{ $data }}">
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Address</label>
                                                     <input class="form-control" type="text" name="address"
-                                                        placeholder="Address" required="required">
+                                                        placeholder="Address">
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Venue/Contact Person Email </label>
                                                     <input class="form-control" type="email" name="contact_email"
-                                                        placeholder="venue/Contact Person Email" required="required">
+                                                        placeholder="venue/Contact Person Email">
                                                 </div>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Contact Person Name </label>
                                                     <input class="form-control" type="text" name="contact_name"
-                                                        placeholder="Contact Person Name" required="required">
+                                                        placeholder="Contact Person Name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -93,7 +93,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Contact Person Phone </label>
                                                     <input class="form-control" type="number" name="contact_phone"
-                                                        placeholder="Contact Person Phone" required="required">
+                                                        placeholder="Contact Person Phone">
                                                 </div>
                                             </div>
                                         </div>

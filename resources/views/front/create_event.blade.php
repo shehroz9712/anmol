@@ -66,15 +66,14 @@
 
                                                 <div class="form-group">
                                                     <label class="control-label">Event Dates</label>
-                                                    <input class="form-control" name="event_date" type="date"
-                                                        required="required">
+                                                    <input class="form-control" name="event_date" type="date">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Occation</label>
                                                     <input class="form-control" name="occation" type="text"
-                                                        placeholder="Occation" required="required">
+                                                        placeholder="Occation">
                                                 </div>
                                             </div>
                                         </div>
@@ -83,14 +82,13 @@
                                                 <div class="form-group">
                                                     <label class="control-label">No. of Guest</label>
                                                     <input class="form-control" name="guest" type="number"
-                                                        placeholder="No. of Guest" required="required">
+                                                        placeholder="No. of Guest">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label">From</label>
-                                                    <input class="form-control" name="from" type="time"
-                                                        required="required">
+                                                    <input class="form-control" name="from" type="time">
                                                 </div>
                                             </div>
                                         </div>
@@ -98,8 +96,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label class="control-label">To</label>
-                                                    <input class="form-control" name="to" type="time"
-                                                        required="required">
+                                                    <input class="form-control" name="to" type="time">
                                                 </div>
                                             </div>
                                         </div>

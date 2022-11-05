@@ -63,22 +63,20 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time Begin</label>
-                                                        <input class="form-control" name="appitizer_start" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="appitizer_start" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time End</label>
-                                                        <input class="form-control" name="appitizer_end" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="appitizer_end" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">No of Station</label>
                                                         <input class="form-control" name="appitizer_station" type="text"
-                                                            placeholder="Johan" required="required">
+                                                            placeholder="Johan">
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,22 +101,20 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time Begin</label>
-                                                        <input class="form-control" name="maincource_start" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="maincource_start" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time End</label>
-                                                        <input class="form-control" name="maincource_end" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="maincource_end" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">No of Station</label>
-                                                        <input class="form-control" name="maincource_station"
-                                                            type="text" placeholder="Johan" required="required">
+                                                        <input class="form-control" name="maincource_station" type="text"
+                                                            placeholder="Johan">
                                                     </div>
                                                 </div>
                                             </div>
@@ -143,22 +139,20 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time Begin</label>
-                                                        <input class="form-control" name="desert_start" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="desert_start" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Time End</label>
-                                                        <input class="form-control" name="desert_end" type="time"
-                                                            required="required">
+                                                        <input class="form-control" name="desert_end" type="time">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">No of Station</label>
                                                         <input class="form-control" name="desert_station" type="text"
-                                                            placeholder="Johan" required="required">
+                                                            placeholder="Johan">
                                                     </div>
                                                 </div>
                                             </div>

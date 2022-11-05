@@ -63,8 +63,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label class="control-label">QTY</label>
-                                                <input class="form-control" name="qty[]" id="qty" type="number"
-                                                    required="required">
+                                                <input class="form-control" name="qty[]" id="qty" type="number">
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -128,7 +127,7 @@
                             <div class="form-group">
                                 <label class="control-label">QTY</label>
                                 <input class="form-control" readonly name="qty[]" id="qty" value="${qty}"
-                                    type="number" required="required">
+                                    type="number" >
                             </div>
                         </div>
                         <div class="col-sm-3">
