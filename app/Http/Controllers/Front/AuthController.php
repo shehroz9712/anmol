@@ -18,7 +18,7 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(), [
             'username' => 'required|string',
-            'email' => 'required|string|email|max:191|unique:users',
+            'email' => 'string|email|max:191|unique:users',
             'phone' => 'required',
 
         ]);
@@ -47,10 +47,6 @@ class AuthController extends Controller
         // dispatch(new \App\Jobs\SendUserCreatedEmailJob($userdata));
         request()->session()->flash('message', 'Your feedback submitted successfully');
 
-
-        // if (Auth::attempt($request)) {
-        //     return $this->sendLoginResponse($request);
-        // }
 
 
         $credentials = (['email' => $userdata->email, 'password' => $password]);

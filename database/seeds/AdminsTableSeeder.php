@@ -24,9 +24,9 @@ class AdminsTableSeeder extends Seeder
             'first_name' => 'Super',
             'last_name'  => 'Admin',
             'phone'      => '123456789',
-            'email'      => 'admin@splashworks.com',
+            'email'      => 'admin@anmol.com',
             'password'   => bcrypt('admin123'),
-            'is_active'  => 1,
+            'status'  => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

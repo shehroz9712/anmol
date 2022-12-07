@@ -6,80 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="viho admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+        content="viho admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities. laravel/framework: ^8.40">
     <meta name="keywords"
         content="admin template, viho admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-
+    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    <title>@yield('title')</title>
+    <!-- Google font-->
+    {{-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet"> --}}
+    <!-- Font Awesome-->
     @includeIf('admin.layouts.partials.head')
     @yield('css')
-</head>
 
+</head>
 
 <body class="dark-only">
     <!-- Loader starts-->
     <div class="loader-wrapper">
-        <div class="theme-loader">
-            <div class="loader-p"></div>
-        </div>
+        <div class="theme-loader"></div>
     </div>
     <!-- Loader ends-->
     <!-- page-wrapper Start-->
-    <div class="page-wrapper" id="pageWrapper">
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
         <!-- Page Header Start-->
-        <div class="page-main-header">
-            <div class="main-header-right row m-0">
-                <div class="main-header-left pb-3 pt-0">
+        @includeIf('admin.layouts.partials.header')
 
-                    <div class="dark-logo-wrapper"><a href="/"><img class="img-fluid w-75"
-                                src="../assets/images/logo/dark-logo.png" alt=""></a></div>
-
-                </div>
-
-                {{-- <div class="nav-right col pull-right right-menu p-0">
-                    <ul class="nav-menus">
-
-                        <li class="onhover-dropdown p-0">
-                            <button class="btn btn-link" type="button"><a href="login_two.html"><i
-                                        data-feather="log-out"></i>Log
-                                    out</a></button>
-                        </li>
-                    </ul>
-                </div> --}}
-                <div class="d-lg-none mobile-toggle pull-right w-auto"><i data-feather="more-horizontal"></i></div>
-            </div>
-        </div>
         <!-- Page Header Ends -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper sidebar-icon">
             <!-- Page Sidebar Start-->
-
+            @includeIf('admin.layouts.partials.sidebar')
             <!-- Page Sidebar Ends-->
-            <!-- Container-fluid starts-->
-            @yield('content')
+            <div class="ml:0 page-body" style="margin-left: 0px;margin-top: 40px;">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Basic DataTables</h3>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Events</a></li>
+                                    <li class="breadcrumb-item">Events List</li>
+                                </ol>
+                            </div>
 
-
-            <!-- Container-fluid Ends-->
-        </div>
-        <!-- footer start-->
-        <footer class="footer footer-dark  fixed-bottom  m-l-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 footer-copyright">
-                        <p class="mb-0">{!! \Carbon\Carbon::now()->format('Y') !!} &copy; Copyright by {!! config('app.name') !!}. .</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="pull-right mb-0"> All rights reserved
-                        </p>
+                        </div>
                     </div>
                 </div>
+                <!-- Container-fluid starts-->
+                @yield('content')
+
+                <!-- Container-fluid Ends-->
             </div>
-        </footer>
+            <!-- footer start-->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 footer-copyright">
+                            <p class="mb-0">Copyright {{ date('Y') }}-{{ date('y', strtotime('+1 year')) }} © viho
+                                All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="pull-right mb-0">Hand crafted & made with <i
+                                    class="fa fa-heart font-secondary"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
-    </div>
+    <!-- latest jquery-->
+    <script type="text/javascript">
+        // localStorage.clear();
+        var div = document.querySelector("div.page-wrapper")
+        if (div.classList.contains('compact-sidebar')) {
+            div.classList.remove("compact-sidebar");
+        }
+        if (div.classList.contains('modern-sidebar')) {
+            div.classList.remove("modern-sidebar");
+        }
+        localStorage.setItem('page-wrapper', 'page-wrapper compact-wrapper');
+        localStorage.setItem('page-body-wrapper', 'sidebar-icon');
+    </script>
 
     @includeIf('admin.layouts.partials.footer')
     @yield('footer-js')
+
+
 </body>
 
 </html>

@@ -1,6 +1,16 @@
 @extends('front.layouts.app')
 
 @section('content')
+    <style>
+        input:disabled label {
+            color: #ccc;
+        }
+
+        input[type="checkbox"] .notcheck label,
+        input[type="checkbox"] .notcheck label a {
+            color: #bfbfce !important;
+        }
+    </style>
     <div class="m-l-0 page-body">
         <div class="container-fluid">
             <div class="row">
@@ -44,42 +54,45 @@
                                 <div class="col-xs-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="form-check">
+                                            {{-- <div class="form-check">
                                                 <div class="checkbox p-0">
                                                     <input class="form-check-input custom_package" id="invalidCheck"
                                                         type="checkbox" onchange="valueChanged()">
                                                     <label class="form-check-label" for="invalidCheck">Make your own
                                                         Package</label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <form class="theme-form" action="{!! route('front.submit_menu') !!}" method="POST">
                                                 <input type="hidden" name="id" value="{{ $data }}">
                                                 @csrf
-                                                <div class="menu" style="display: none">
+                                                <div class="menu">
                                                     <div class="row">
-                                                        @foreach ($subcats as $subcat)
+                                                        @foreach ($package->include as $subcat)
                                                             <div class="col-sm-6 col-lg-3 p-3">
                                                                 <div class="default-according"
-                                                                    id="accordion{{ $subcat->id }}">
+                                                                    id="accordion{{ $subcat->subcategory->id }}">
                                                                     <div class="card">
-                                                                        <div class="bg-primary card-header p-2"
-                                                                            id="heading{{ $subcat->id }}">
-                                                                            <h5 class="mb-0">
+                                                                        <div class="class="bg-primary card-header p-2""
+                                                                            id="heading{{ $subcat->subcategory->id }}">
+                                                                            <h5 class="b-b-dark mb-0">
                                                                                 <button type="button"
                                                                                     class="bg-transparent btn btn-link text-white"
                                                                                     data-bs-toggle="collapse"
-                                                                                    data-bs-target="#collapse{{ $subcat->id }}"
+                                                                                    data-bs-target="#collapse{{ $subcat->subcategory->id }}"
                                                                                     aria-expanded="true"
-                                                                                    aria-controls="collapse{{ $subcat->id }}">{{ $subcat->name }}</button>
+                                                                                    aria-controls="collapse{{ $subcat->subcategory->id }}">{{ $subcat->subcategory->name }}
+                                                                                    - (only {{ $subcat->qty }})</button>
+
                                                                             </h5>
                                                                         </div>
                                                                         <div class="collapse"
-                                                                            id="collapse{{ $subcat->id }}"
+                                                                            id="collapse{{ $subcat->subcategory->id }}"
                                                                             aria-labelledby="headingOne"
-                                                                            data-bs-parent="#accordion{{ $subcat->id }}">
+                                                                            data-bs-parent="#accordion{{ $subcat->subcategory->id }}">
                                                                             <div class="card-body p-0">
-                                                                                <ul>
-                                                                                    @foreach ($subcat->dishes as $dishe)
+                                                                                <ul class="mycheck"
+                                                                                    data-max-answers="{{ $subcat->qty }}">
+                                                                                    @foreach ($subcat->subcategory->dishes as $dishe)
                                                                                         <li>
                                                                                             <input type="checkbox"
                                                                                                 value="{{ $dishe->id }}"
@@ -109,58 +122,53 @@
                                             </form>
 
                                             <div class="row package">
-                                                @foreach ($packagecategories as $packagecategory)
-                                                    <div class="col-sm-12">
-                                                        <div class="">
-                                                            <div class="card-header text-center">
-                                                                <h5>{{ $packagecategory->name }}</h5>
-                                                            </div>
-                                                            <div class="card-body row pricing-content ">
-                                                                @foreach ($packagecategory->packages as $package)
-                                                                    <div class="col-md-3">
-                                                                        <div class="pricing-block card text-center">
-                                                                            <div class="pricing-header">
-                                                                                <h2>{{ $package->package_name }}</h2>
-                                                                                <div class="price-box">
-                                                                                    <div>
-                                                                                        <h3>{{ $package->person }}</h3>
-                                                                                        <p>Person
-                                                                                            For{{ $package->currency }}{{ $package->price }}
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="pricing-list">
-                                                                                <ul class="pricing-inner">
-                                                                                    @foreach ($package->include as $include)
-                                                                                        <li>
-                                                                                            <h6> {{ $include->qty }} -
-                                                                                                {{ $include->subcategory->name }}
-                                                                                            </h6>
-                                                                                        </li>
-                                                                                        <br>
-                                                                                    @endforeach
+                                                <div class="col-sm-12">
+                                                    <div class="">
 
+                                                        <div class="card-body row pricing-content ">
 
-                                                                                </ul>
-                                                                                <a href="{!! route('front.package', $package->id) !!}"
-                                                                                    class="btn btn-primary btn-lg process"
-                                                                                    type="button"
-                                                                                    data-original-title="btn btn-primary btn-lg"
-                                                                                    title="">Add to
-                                                                                    process</a>
+                                                            <div class="col-md-3">
+                                                                <div class="pricing-block card text-center">
+                                                                    <div class="pricing-header">
+                                                                        <h2>{{ $package->package_name }}</h2>
+                                                                        <div class="price-box">
+                                                                            <div>
+                                                                                <h3>{{ $package->person }}</h3>
+                                                                                <p>Person
+                                                                                    For{{ $package->currency }}{{ $package->price }}
+                                                                                </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                @endforeach
+                                                                    <div class="pricing-list">
+                                                                        <ul class="pricing-inner">
+                                                                            @foreach ($package->include as $include)
+                                                                                <li>
+                                                                                    <h6> {{ $include->qty }} -
+                                                                                        {{ $include->subcategory->name }}
+                                                                                    </h6>
+                                                                                </li>
+                                                                                <br>
+                                                                            @endforeach
 
 
+                                                                        </ul>
+                                                                        <a href="{!! route('front.package', $package->id) !!}"
+                                                                            class="btn btn-primary btn-lg process"
+                                                                            type="button"
+                                                                            data-original-title="btn btn-primary btn-lg"
+                                                                            title="">Add to
+                                                                            process</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+
+
                                                         </div>
                                                     </div>
-                                                @endforeach
+                                                </div>
                                             </div>
-                                            <div class="desc card"style="display: none">
+                                            <div class="desc card">
                                                 <div class="row">
                                                     {{-- @foreach ($packages as $package)
                                                             @foreach ($package->dishes1 as $package2)
@@ -250,5 +258,34 @@
                 error: function(response) {}
             });
         });
+        $(document).ready(function() {
+            $("input[type=checkbox]").click(function(e) {
+                if ($(e.currentTarget).closest("ul.mycheck li").length > 0) {
+                    console.log($(e.currentTarget).closest("ul.mycheck").length);
+
+                    toggleInputs($(e.currentTarget).closest("ul.mycheck")[0]);
+                }
+            });
+        });
+
+        function toggleInputs(questionElement) {
+            if ($(questionElement).data('max-answers') == undefined) {
+                return true;
+
+            } else {
+
+                maxAnswers = parseInt($(questionElement).data('max-answers'), 10);
+
+                if ($(questionElement).find(":checked").length >= maxAnswers) {
+                    $(questionElement).find(":not(:checked)").attr("disabled", true);
+                    $(questionElement).find(":not(:checked)").addClass("notcheck");
+
+                } else {
+
+                    $(questionElement).find("input[type=checkbox]").attr("disabled", false);
+                    $(questionElement).find("input[type=checkbox]").removeClass("notcheck");
+                }
+            }
+        }
     </script>
 @endsection

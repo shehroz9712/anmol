@@ -18,7 +18,7 @@ class Controller extends BaseController
      */
     public function __construct()
     {
-        \View::share('siteSettings', \App\Models\SiteSetting::find(1));
+        // \View::share('siteSettings', \App\Models\SiteSetting::find(1));
     }
 
     /**
@@ -27,39 +27,29 @@ class Controller extends BaseController
      */
     public function isAdmin()
     {
-        $redirect = strpos(url()->current(), '/admin') !== false ? 'admin' : '/';
+        // $redirect = strpos(url()->current(), '/admin') !== false ? 'admin' : '/';
 
-        if (auth()->user()) {
-            $user  = auth()->user();
-            $roles = \DB::table('role_user')->where('user_id', $user->id)->pluck('role_id')->toArray();
+        // if (auth()->user()) {
+        //     $user  = auth()->user();
+        //     $roles = \DB::table('role_user')->where('user_id', $user->id)->pluck('role_id')->toArray();
 
-            if (!in_array(1, $roles) && !in_array(2, $roles)) {
-                header('Location: ' . \URL::to($redirect));
-                die();
-            }
-        } else {
-            header('Location: ' . \URL::to($redirect));
-            die();
-        }
+        //     if (!in_array(1, $roles) && !in_array(2, $roles)) {
+        //         header('Location: ' . \URL::to($redirect));
+        //         die();
+        //     }
+        // } else {
+        //     header('Location: ' . \URL::to($redirect));
+        //     die();
+        // }
     }
 
-    /*
-    * getRestrictedPagesIds
-    *
-    **/
-    public function getRestrictedPagesIds()
+
+
+    public function image_upload($file)
     {
-        return \DB::table('pages')
-            ->whereIn('slug', ['home', 'contact'])
-            ->pluck('id')
-            ->toArray();
+        $extension = $file->getClientOriginalExtension(); // getting file extension
+        $filename  = 'media-file-' . time() . '.' . $extension;
+        $file->move(uploadsDir(), $filename);
+        return $filename;
     }
-    public function getRestrictedBlogsIds()
-    {
-        return \DB::table('blogs')
-            ->whereIn('slug', ['home', 'contact'])
-            ->pluck('id')
-            ->toArray();
-    }
-
 }

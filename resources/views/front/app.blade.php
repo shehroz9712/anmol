@@ -32,14 +32,14 @@
         <!-- Container-fluid Ends-->
     </div>
     <!-- footer start-->
-    <footer class="footer footer-dark fixed-bottom  m-l-0">
+    <footer class="footer footer-dark m-l-0">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 footer-copyright">
                     <p class="mb-0">{!! \Carbon\Carbon::now()->format('Y') !!} &copy; Copyright by {!! config('app.name') !!}. .</p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <p class="pull-right mb-0"> All rights reserve
+                    <p class="text-end mb-0"> All rights reserve
                     </p>
                 </div>
             </div>

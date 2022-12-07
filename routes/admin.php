@@ -13,12 +13,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'IndexController@index')->name('login'); // for redirection purpose
+Route::get('/', 'DashboardController@index')->name('login'); // for redirection purpose
+Route::get('admin', 'DashboardController@index')->name('login'); // for redirection purpose
 
 Route::name('admin.')->group(
     function () {
 
-        Route::get('admin', 'IndexController@index');
+        Route::get('admin', 'DashboardController@index');
 
         # to show login form
         Route::get('/auth/login', [
@@ -51,25 +52,7 @@ Route::name('admin.')->group(
             'as' => 'dashboard.index'
         ]);
 
-        Route::resource('administrators', 'AdministratorsController');
-        Route::resource('pages', 'PagesController');
-        Route::resource('blogs', 'BlogsController');
-        Route::resource('careers', 'CareersController');
-        Route::resource('locations', 'LocationController');
-        Route::resource('testimonials', 'TestimonialsController');
-        Route::resource('sliders', 'SlidersController');
-        Route::resource('sections', 'SectionsController');
-        Route::resource('news_slides', 'News_slideController');
-        Route::resource('apply_jobs', 'ApplyJobController');
-        Route::resource('features', 'FeaturesController');
-        Route::resource('site-settings', 'SiteSettingsController');
-        //        Route::resource('users', 'UsersController');
-        Route::resource('newsletter-subscribers', 'NewsletterSubscriberController');
-        Route::resource('contact-queries', 'ContactQueryController');
-        Route::resource('faqs', 'FaqController');
-        Route::get('country-state-city', 'CountryStateCityController@index');
-        Route::post('get-states-by-country', 'CountryStateCityController@getState');
-        Route::post('get-cities-by-state', 'CountryStateCityController@getCity');
+        Route::resource('ingredients', 'IngredientsController');
 
         # To show change password form
         Route::get('/change-password', [
@@ -83,4 +66,5 @@ Route::name('admin.')->group(
             'as' => 'users.change-password'
         ]);
     }
+
 );

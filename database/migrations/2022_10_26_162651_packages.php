@@ -17,8 +17,9 @@ class Packages extends Migration
             $table->id();
             $table->string('package_name', 64)->nullable();
             $table->integer('person')->nullable();
-            $table->string('dishes')->nullable();
+            $table->string('currency')->nullable();
             $table->integer('price')->nullable();
+            $table->integer('category_id')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

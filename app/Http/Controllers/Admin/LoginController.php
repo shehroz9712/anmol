@@ -45,6 +45,10 @@ class LoginController extends Controller
         parent::__construct();
     }
 
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 
     public function showLoginForm()
     {
@@ -68,7 +72,7 @@ class LoginController extends Controller
         return [
             'email'     => $request->{$this->username()},
             'password'  => $request->password,
-            'status' => 1
+            'is_active' => 1
         ];
     }
 
@@ -97,10 +101,5 @@ class LoginController extends Controller
         }
 
         return view('admin.auth.forgot-password');
-    }
-
-    protected function guard()
-    {
-        return Auth::guard('admin');
     }
 }

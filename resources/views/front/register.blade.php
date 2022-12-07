@@ -4,8 +4,8 @@
     <div class="m-l-0 page-body">
         <div class="container-fluid">
             <div class="page-header">
-                <div class="row">
-                    <div class="col-sm-12">
+                <div class="justify-content-around row">
+                    <div class="col-sm-7">
                         <div class="card">
                             <div class="card-header pb-0">
                                 <h5>Booking Form</h5><span>Using this form to register yourself if you are already
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-iconsolid float-end right">Submit</button>
+                                    <button type="submit" class="btn btn-iconsolid float-end right mb-4">Submit</button>
                                 </div>
                             </form>
                         </div>

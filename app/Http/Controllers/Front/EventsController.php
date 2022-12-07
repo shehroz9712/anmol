@@ -8,24 +8,27 @@ use App\Models\Events;
 use App\Models\EvnetEquipmentsStaff;
 use App\Models\LabourStaff;
 use App\Models\MenuPackages;
+use App\Models\PackageCategory;
 use App\Models\Packages;
+use App\Models\SubCatogires;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
 class EventsController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:web');
-        parent::__construct();
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:web');
+    //     parent::__construct();
+    // }
     // Events start
 
     public function submit_events(Request $request)
     {
         $data = $request->validate([
             'event_name' => 'required|string',
-            'event_date' => 'required|date|after_or_equal:today',
+            'event_date' => 'required|date|after_or_equal:week',
         ]);
         $data = $request->except(
             [
@@ -36,7 +39,7 @@ class EventsController extends Controller
         if ($insert_data) {
             return redirect()
                 ->route('front.venue_info', $insert_data->id)
-                ->with('success', 'Events has been submit successfully.');
+                ->with('success', 'Events has been created successfully.');
         } else {
             return redirect()->back()->with('error', 'Something Wrong please resubmit .Thank you');
         }
@@ -87,15 +90,35 @@ class EventsController extends Controller
     // menu start
     public function menu($id)
     {
-        $packages = Packages::where('status', 1)->with('dishes1')->get();
-        // dd($packages);
+        $packagecategories = PackageCategory::where('status', 1)->with('packages')->get();
+
 
         // $package_dishes =  implode(',', $packages->dishes);
 
         $dishes = Dishes::where('status', 1)->with('menu_attribute')->get();
         $data = $id;
-        return view('front.menu', compact('data', 'packages', 'dishes'));
+        $subcats = SubCatogires::where('status', 1)->with('dishes')->get();
+
+        return view('front.menu', compact('data', 'packagecategories', 'dishes', 'subcats'));
     }
+    public function package($packageid)
+    {
+
+        $package = Packages::where(['id' => $packageid, 'status' => 1])->with('include')->first();
+
+        $data = $packageid;
+
+
+        return view('front.package', compact('data', 'package'));
+    }
+
+
+    public function getdetail()
+    {
+        $dishes = Dishes::where('id', 1)->get();
+        return Response::json($dishes);
+    }
+
     public function submit_menu(Request $request)
     {
         dd($request->all());

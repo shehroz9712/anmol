@@ -1,6 +1,6 @@
 <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
 <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
-<title>vihosas - Premium Admin Template</title>
+<title>Event Management System </title>
 <!-- Google font-->
 <link rel="preconnect" href="http://fonts.gstatic.com">
 <link
@@ -38,3 +38,6 @@
 <!-- Responsive.css') }}-->
 <link rel="stylesheet" type="text.css" href="{{ asset('assets/css/responsive.css') }}">
 <link rel="stylesheet" type="text.css" href="{{ asset('assets/css/my_style.css') }}">
+<style>
+
+</style>

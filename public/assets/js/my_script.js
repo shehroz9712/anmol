@@ -1,3 +1,4 @@
+
 function valueChanged() {
     if ($('.custom_package').is(":checked")) {
         $(".package").hide();

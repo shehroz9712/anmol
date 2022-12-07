@@ -68,7 +68,7 @@
 
     label {
         /* border: 1px solid #fff; */
-        padding: 10px;
+        padding: 0px 25px;
         display: block;
         position: relative;
         margin: 10px;
@@ -76,14 +76,14 @@
     }
 
     label:before {
-        background-color: white;
         color: white;
         content: " ";
         display: block;
         border-radius: 50%;
         /* border: 1px solid grey; */
         position: absolute;
-        left: -5px;
+        left: 0px;
+        top: -5px;
         width: 25px;
         height: 25px;
         text-align: center;
@@ -105,7 +105,6 @@
 
     :checked+label:before {
         content: "✓" !important;
-        background-color: grey;
         transform: scale(1);
     }
 

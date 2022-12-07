@@ -4,7 +4,7 @@
             <p>Event Detail</p>
         </div>
         <div class="stepwizard-step"><a class="btn btn-light" href="{!! route('front.venue_info.1') !!}">2</a>
-            <p>Vanue Info</p>
+            <p>Venue Info</p>
         </div>
         <div class="stepwizard-step"><a class="btn btn-light" href="{!! route('front.menu') !!}">3</a>
             <p>Menu Detail</p>

@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="stepwizard-step"><a class="btn btn-primary"
                                             href="{!! route('front.venue_info', $data) !!}">2</a>
-                                        <p>Vanue Info </p>
+                                        <p>Venue Info </p>
                                     </div>
                                     <div class="stepwizard-step"><a class="btn btn-light" disabled>3</a>
                                         <p>Menu Detail</p>
@@ -73,9 +73,9 @@
                                             <div class="col-sm-6">
 
                                                 <div class="form-group">
-                                                    <label class="control-label">Venue/Contact Person Email </label>
+                                                    <label class="control-label">Venue Contact Person Email </label>
                                                     <input class="form-control" type="email" name="contact_email"
-                                                        placeholder="venue/Contact Person Email">
+                                                        placeholder="Venue Contact Person Email">
                                                 </div>
                                             </div>
                                         </div>
@@ -83,17 +83,17 @@
                                             <div class="col-sm-6">
 
                                                 <div class="form-group">
-                                                    <label class="control-label">Contact Person Name </label>
+                                                    <label class="control-label">Venue Contact Person Name </label>
                                                     <input class="form-control" type="text" name="contact_name"
-                                                        placeholder="Contact Person Name">
+                                                        placeholder="Venue Contact Person Name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
 
                                                 <div class="form-group">
-                                                    <label class="control-label">Contact Person Phone </label>
+                                                    <label class="control-label">Venue Contact Person Phone </label>
                                                     <input class="form-control" type="number" name="contact_phone"
-                                                        placeholder="Contact Person Phone">
+                                                        placeholder="Venue Contact Person Phone">
                                                 </div>
                                             </div>
                                         </div>

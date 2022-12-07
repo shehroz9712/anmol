@@ -30,6 +30,7 @@ Route::name('front.')->group(
         Route::post('/submit_events', 'EventsController@submit_events')->name('submit_events');
         Route::get('/Venue-Info/{id}', 'EventsController@venue_info')->name('venue_info');
         Route::post('/submit_venue', 'EventsController@submit_venue')->name('submit_venue');
+        Route::get('/package/{id}', 'EventsController@package')->name('package');
         Route::get('/Menu/{id}', 'EventsController@menu')->name('menu');
         Route::post('/submit_menu', 'EventsController@submit_menu')->name('submit_menu');
         Route::get('/Service-Style/{id}', 'EventsController@service')->name('service');
@@ -38,6 +39,7 @@ Route::name('front.')->group(
         Route::post('/submit_equipments', 'EventsController@submit_equipments')->name('submit_equipments');
         Route::get('/Labour-Staff/{id}', 'EventsController@labour_staff')->name('labour_staff');
         Route::post('/submit_labour_staff', 'EventsController@submit_labour_staff')->name('submit_labour_staff');
+        Route::get('/getdetail/{id}', 'EventsController@getdetail')->name('getdetail');
     }
 
 );
