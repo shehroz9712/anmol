@@ -52,7 +52,7 @@ Route::name('admin.')->group(
             'as' => 'dashboard.index'
         ]);
 
-        Route::resource('ingredients', 'IngredientsController');
+        Route::resource('administrators', 'AdminController');
 
         # To show change password form
         Route::get('/change-password', [
