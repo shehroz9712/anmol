@@ -53,6 +53,19 @@ Route::name('admin.')->group(
         ]);
 
         Route::resource('administrators', 'AdminController');
+        Route::resource('categories', 'CategoriesController');
+        Route::resource('users', 'AdminController');
+        Route::resource('labour', 'LabourStaffController');
+        Route::resource('packages', 'AdminController');
+        Route::resource('events', 'AdminController');
+        Route::resource('equipments', 'EquipmentsController');
+        Route::resource('dishes', 'DishesController');
+        Route::resource('sitesetting', 'SiteSettingController');
+        Route::resource('contactquries', 'AdminController');
+        Route::resource('categories', 'AdminController');
+        // Route::resource('sitesetting', 'AdminController');
+        // Route::resource('sitesetting', 'AdminController');
+        // Route::resource('sitesetting', 'AdminController');
 
         # To show change password form
         Route::get('/change-password', [

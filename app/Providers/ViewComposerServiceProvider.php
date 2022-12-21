@@ -27,8 +27,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeAdminPages();
-        $site_settings = SiteSetting::first();
-        View::share(['setting' => $site_settings]);
+        // $site_settings = SiteSetting::first();
+        // View::share(['setting' => $site_settings]);
     }
 
     /**

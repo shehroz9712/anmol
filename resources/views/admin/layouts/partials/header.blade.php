@@ -46,16 +46,16 @@
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Catogires managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-catogires.php">Create Catogires</a></li>
-                                <li><a href="manage-catogires.php">Manage Catogires</a></li>
+                                <li><a href="{!! URL::route('admin.categories.create') !!}">Create Catogires</a></li>
+                                <li><a href="{!! URL::route('admin.categories.index') !!}">Manage Catogires</a></li>
                             </ul>
                         </li>
 
 
-                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="bookmark.html"><i
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="{!! URL::route('admin.contactquries.index') !!}"><i
                                     data-feather="heart"></i><span>Contact Queries</span></a>
                         </li>
-                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="bookmark.html"><i
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="{!! URL::route('admin.sitesetting.index') !!}"><i
                                     data-feather="heart"></i><span>Site Settings</span></a>
                         </li>
 
@@ -63,32 +63,24 @@
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Dishes managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-dishes.php">Create Dishes</a></li>
-                                <li><a href="manage-dishes.php">Manage Dishes</a></li>
+                                <li><a href="{!! URL::route('admin.dishes.create') !!}">Create Dishes</a></li>
+                                <li><a href="{!! URL::route('admin.dishes.index') !!}">Manage Dishes</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Equipments managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-equipments.php">Create Equipments</a></li>
-                                <li><a href="manage-equipments.php">Manage Equipments</a></li>
+                                <li><a href="{!! URL::route('admin.equipments.create') !!}">Create Equipments</a></li>
+                                <li><a href="{!! URL::route('admin.equipments.index') !!}">Manage Equipments</a></li>
                             </ul>
                         </li>
 
-
-                        <li class=""><a class="nav-link menu-title" href="#"><i
-                                    class="fa fa-list-ul"></i><span>Equipments</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="create-equipments.php">Create Equipments</a></li>
-                                <li><a href="manage-equipments.php">Manage Equipments</a></li>
-                            </ul>
-                        </li>
 
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Events managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-events.php">Create Events</a></li>
-                                <li><a href="manage-events.php">Manage Events
+                                <li><a href="{!! URL::route('admin.events.create') !!}">Create Events</a></li>
+                                <li><a href="{!! URL::route('admin.events.index') !!}">Manage Events
 
                             </ul>
                         </li>
@@ -96,38 +88,22 @@
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Labour staff managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-failed_jobs.php">Create Labour staff</a></li>
-                                <li><a href="manage-failed_jobs.php">Manage Labour staff</a></li>
+                                <li><a href="{!! URL::route('admin.labour.create') !!}">Create Labour staff</a></li>
+                                <li><a href="{!! URL::route('admin.labour.index') !!}">Manage Labour staff</a></li>
 
                             </ul>
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Packages managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-failed_jobs.php">Create Packages</a></li>
-                                <li><a href="manage-failed_jobs.php">Manage Packages</a></li>
+                                <li><a href="{!! URL::route('admin.packages.create') !!}">Create Packages</a></li>
+                                <li><a href="{!! URL::route('admin.packages.index') !!}">Manage Packages</a></li>
 
                             </ul>
                         </li>
 
 
-                        <li class="dropdown"><a class="nav-link menu-title" href="#"><i
-                                    class="fa fa-user"></i><span>Categories managment</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="create-failed_jobs.php">Create Categories</a></li>
-                                <li><a href="manage-failed_jobs.php">Manage Categories</a></li>
-
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a class="nav-link menu-title" href="#"><i
-                                    class="fa fa-user"></i><span>Packages Categories managment</span></a>
-                            <ul class="nav-submenu menu-content">
-                                <li><a href="create-failed_jobs.php">Create Packages Categories</a></li>
-                                <li><a href="manage-failed_jobs.php">Manage Packages Categories</a></li>
-
-                            </ul>
-                        </li>
+                     
 
 
 
@@ -135,8 +111,8 @@
                         <li class="dropdown"><a class="nav-link menu-title" href="#"><i
                                     class="fa fa-user"></i><span>Users managment</span></a>
                             <ul class="nav-submenu menu-content">
-                                <li><a href="create-failed_jobs.php">Create Users</a></li>
-                                <li><a href="manage-failed_jobs.php">Manage Users</a></li>
+                                <li><a href="{!! URL::route('admin.users.create') !!}">Create Users</a></li>
+                                <li><a href="{!! URL::route('admin.users.index') !!}">Manage Users</a></li>
 
                             </ul>
                         </li>

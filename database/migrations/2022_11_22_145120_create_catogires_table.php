@@ -16,6 +16,7 @@ class CreateCatogiresTable extends Migration
         Schema::create('catogires', function (Blueprint $table) {
             $table->id();
             $table->string('name', 64)->nullable();
+            $table->boolean('usedin')->default(0);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
